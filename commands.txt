@@ -1,0 +1,40 @@
+1. To deploy the smart contract (and adds 5 to the x value):
+
+```
+npx hardhat ignition deploy ignition/modules/example-counter/Counter.ts --network ethereumSepolia
+
+2. To run the script in order to read the x value in the Counter Smart Contract:
+
+```
+npx hardhat run scripts/readX.ts --network ethereumSepolia
+```
+
+3. To test the code write 
+
+```
+npx hardhat test solidity
+```
+
+4. To run the script in order to read the x value in the Counter Smart Contract:
+
+```
+npx hardhat run scripts/readX.ts --network baseSepolia
+```
+
+5. To verify a smart contract:
+
+```
+npx hardhat ignition deploy ignition/modules/MyToken.ts --network baseSepolia --verify
+```
+
+6. To clear old deployments in case of deployment error:
+
+```
+rm -rf ignition/deployments
+```
+
+Otherwise give the contract a new id name:
+
+const token = m.contract("MyToken", args, {
+  id: "MyToken_v2"
+});
